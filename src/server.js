@@ -10,7 +10,8 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-const mongoDbPath = "mongodb+srv://vrundraval24:vrundraval24@cluster0.iswobtl.mongodb.net/notesdb"
+// const mongoDbPath = "mongodb+srv://vrundraval24:vrundraval24@cluster0.iswobtl.mongodb.net/notesdb"
+const mongoDbPath = process.env.mongoDbURL
 mongoose.connect(mongoDbPath).then(function () {
     app.get('/', (req, res) => {
         const response = { statusCode: res.statusCode, message: "API is working. "}
