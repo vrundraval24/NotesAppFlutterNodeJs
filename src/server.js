@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 const mongoDbPath = "mongodb+srv://vrundraval24:vrundraval24@cluster0.iswobtl.mongodb.net/notesdb"
 mongoose.connect(mongoDbPath).then(function () {
     app.get('/', (req, res) => {
-        const response = { message: "API is working. "}
+        const response = { statusCode: res.statusCode, message: "API is working. "}
         res.json(response)
     })
 
